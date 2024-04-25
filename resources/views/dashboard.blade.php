@@ -1,6 +1,6 @@
 <x-app-layout>
     <div
-        class="relative flex flex-col bg-clip-border  bg-[#1f2937] text-white h-[calc(100vh-2rem)] w-full max-w-[18rem] p-4 shadow-xl shadow-blue-gray-900/5">
+        class="relative flex flex-col bg-clip-border  bg-[#1f2937] text-white h-[calc(101.5vh-5rem)] w-full max-w-[18rem] p-4 shadow-xl shadow-blue-gray-900/5">
         <div class="mb-2 p-4">
             <h5 class="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-white">
                 Material Tailwind</h5>
@@ -64,24 +64,5 @@
                 </div>Settings
             </div>
         </nav>
-    </div>
-
-    <div class="w-full pt-5 px-4 mb-8 mx-auto ">
-        <div class="text-sm text-gray-700 py-1">
-            Made with <a class="text-gray-700 font-semibold"
-                href="https://www.material-tailwind.com/docs/react/sidebar?ref=tailwindcomponents"
-                target="_blank">Material Tailwind</a> by <a href="https://www.creative-tim.com?ref=tailwindcomponents"
-                class="text-gray-700 font-semibold" target="_blank"> Creative Tim</a>.
-        </div>
-    </div>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
     </div>
 </x-app-layout>

@@ -3,7 +3,7 @@
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <div class="flex flex-wrap min-h-screen w-full content-center justify-center bg-gray-200 py-10">
-  
+
   <div class="flex shadow-md">
     <div class="flex flex-wrap content-center justify-center rounded-l-md bg-white w-96 h-128">
       <div class="w-72">
@@ -37,8 +37,8 @@
 
   </div>
 
-  
+
 </div>
-    
-    
+
+
 </x-guest-layout>

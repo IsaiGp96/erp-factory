@@ -7,7 +7,8 @@
                     <!-- Logo -->
                     <div class="shrink-0 flex items-center">
                         <a href="{{ route('dashboard') }}">
-                            <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                            <img class=" bg-center bg-no-repeat bg-cover rounded-r-md h-[70px] w-[70px]"
+                                src="{{ asset('images/botaspypBlanco.png') }}">
                         </a>
                     </div>
 

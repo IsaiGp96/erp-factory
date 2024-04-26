@@ -18,7 +18,7 @@ Route::get('/administracion', function(){
 });
 
 Route::post('/administracion', function(){
-    
+
     $nombre = request('nombre');
     $apellidos = request('apellidos');
     $curp = request('curp');
@@ -29,7 +29,7 @@ Route::post('/administracion', function(){
     $correo = request('correo');
     $numero_telefonico = request('numero_telefonico');
     $tipo = request('tipo');
-    
+
 
     //INSERT INTO DATABASE
     Empleados::create([
@@ -43,7 +43,7 @@ Route::post('/administracion', function(){
         'correo' => $correo,
         'numero_telefonico' => $numero_telefonico,
         'tipo' => $tipo,
-        
+
     ]);
 });
 

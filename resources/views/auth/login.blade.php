@@ -1,33 +1,36 @@
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
-    <div class="flex shadow-md w-fit h-fit">
+    <div class="flex shadow-xl w-fit h-fit">
 
-        <div class="flex flex-wrap content-center justify-center rounded-md bg-[#1F2937]">
+        <div class="flex flex-wrap content-center justify-center rounded-md bg-gray-300">
             <div class="w-96 h-128 p-4">
 
-                <p class="text-md font-semibold text-gray-200 pb-2">Ingresa tus datos para iniciar sesión.</p>
+                <p class="text-md font-semibold text-gray-800 pb-2">Ingresa tus datos para iniciar sesión.</p>
 
                 <form class="mt-4" method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="mb-3">
-                        <x-input-label class="mb-2 block text-xs font-semibold" for="idEmpleado" :value="__('idEmpleado')" />
-                        <x-text-input type="number" name="idEmpleado" id="idEmpleado" :value="old('idEmpleado')"
-                            placeholder="Ingresa tu ID"
-                            class="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" />
+                        <x-input-label style="color:black" class="mb-2 block  font-semibold" for="idEmpleado" :value="__('idEmpleado')" />
+                        <x-text-input type="text" name="idEmpleado" id="idEmpleado" :value="old('idEmpleado')"
+                            placeholder="ID"
+                            style="background:#77472B; color:white;"
+                            class="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5" />
                     </div>
 
                     <div class="mb-3">
-                        <x-input-label class="mb-2 block text-xs font-semibold" for="password" :value="__('Password')" />
+                        <x-input-label style="color:black" class="mb-2 block text-xs font-semibold" for="password" :value="__('Password')" />
                         <x-text-input type="password" id="password" name="password" :value="old('password')"
-                            placeholder="Ingresa tu contraseña"
+                            style="background:#77472B; color:white;"
+                            placeholder="Contraseña"
                             class="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" />
                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-3" style="text-align: -webkit-center;">
                         <button type="submit"
-                            class="mb-1.5 block w-full text-center text-white bg hover:text-gray-300 pt-7 rounded-md">Iniciar
+                            class="block w-60 text-center text-white bg hover:bg-gray-300 pt-5 rounded-md"
+                            style="background:#77472B;">Iniciar
                             Sesión</button>
                     </div>
                 </form>

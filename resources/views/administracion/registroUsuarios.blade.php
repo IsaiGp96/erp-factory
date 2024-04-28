@@ -44,7 +44,7 @@
 
 <script>
     // Manejar el evento de envío del formulario
-    document.getElementById('form').addEventListener('submit', function(event) {
+    document.getElementById('formRegistro').addEventListener('submit', function(event) {
         // Prevenir la acción por defecto (recargar la página)
         event.preventDefault();
 

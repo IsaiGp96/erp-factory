@@ -2,7 +2,7 @@
 <!-- Code block starts -->
 <dh-component>
 
-    <form method="POST" id="form" action="{{ route('administracion.registroUsuarios') }}">
+    <form method="POST" id="formRegistro" action="{{ route('administracion.registroUsuarios') }}">
         @csrf
 
         <div class="py-12 backdrop-brightness-50 transition duration-150 ease-in-out z-10 absolute top-0 right-0 bottom-0 left-0 hidden"

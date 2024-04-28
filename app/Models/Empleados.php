@@ -5,27 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
-
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Empleados extends Model
 {
 
-        use HasFactory;
+    use HasFactory;
 
-        protected $fillable = [
-            'nombre',
-            'apellidos',
-            'curp',
-            'rfc',
-            'fecha_nac',
-            'departamento',
-            'puesto',
-            'correo',
-            'numero_telefonico',
-            'tipo',
-        ];
-        //Este evento se activa cuando se crea un nuevo empleado
- protected static function boot()
+    protected $fillable = [
+        'nombre',
+        'apellidos',
+        'curp',
+        'rfc',
+        'fecha_nac',
+        'departamento',
+        'puesto',
+        'correo',
+        'numero_telefonico',
+        'tipo',
+    ];
+    //Este evento se activa cuando se crea un nuevo empleado
+    protected static function boot()
     {
         parent::boot();
 
@@ -39,4 +39,6 @@ class Empleados extends Model
             ]);
         });
     }
+
+   
 }

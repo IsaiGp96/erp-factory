@@ -16,7 +16,9 @@ class AdministracionController extends Controller
      */
     public function index(): View
     {
-        return view('administracion.registroUsuarios');
+        return view('administracion.registroUsuarios', [
+            'usuarios' => Empleados::all()
+        ]);
     }
 
     /**

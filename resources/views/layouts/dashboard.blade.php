@@ -67,6 +67,11 @@
             </div> --}}
             </nav>
         </div>
+
+        <div class="overflow-y-auto">{{ $slot }}</div>
+
+       
+
     </div>
 
 </x-app-layout>

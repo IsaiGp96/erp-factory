@@ -14,6 +14,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+
 Route::get('/administracion',[AdministracionController::class, 'index'])->name('administracion.registroUsuarios');
 
 Route::post('/administracion',[AdministracionController::class, 'store'])->name('administracion.store');

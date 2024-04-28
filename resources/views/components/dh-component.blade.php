@@ -119,6 +119,7 @@
                                 <option value="1">Administrativo</option>
                                 <option value="2">Almacén</option>
                                 <option value="3">Compras</option>
+                                <option value="4">Fabrica</option>
                             </select>
                         </div>
 

@@ -1,4 +1,6 @@
-<x-app-layout>
+<x-app-layout>  
+
+    
     <div class="flex">
         <div
             class="relative flex flex-col bg-clip-border  bg-[#1f2937] text-white h-[calc(101.5vh-5rem)] w-full max-w-[18rem] p-4 shadow-xl shadow-blue-gray-900/5">
@@ -53,76 +55,43 @@
                         </svg>
                     </div>Reportes
                 </div>
-                {{-- <div role="button" tabindex="0"
-                class="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-blue-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none">
-                <div class="grid place-items-center mr-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                        class="h-5 w-5">
-                        <path fill-rule="evenodd"
-                            d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 00-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 00-2.282.819l-.922 1.597a1.875 1.875 0 00.432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 000 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 00-.432 2.385l.922 1.597a1.875 1.875 0 002.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349.344-.165.673-.356.985-.57.167-.114.335-.125.45-.082l1.02.382a1.875 1.875 0 002.28-.819l.923-1.597a1.875 1.875 0 00-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.614 7.614 0 000-1.139c-.016-.2.059-.352.153-.43l.84-.692c.708-.582.891-1.59.433-2.385l-.922-1.597a1.875 1.875 0 00-2.282-.818l-1.02.382c-.114.043-.282.031-.449-.083a7.49 7.49 0 00-.985-.57c-.183-.087-.277-.227-.297-.348l-.179-1.072a1.875 1.875 0 00-1.85-1.567h-1.843zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </div>Settings
-            </div> --}}
+
             </nav>
 
 
         </div>
-        <div class="flex flex-col ml-10 mt-5 bg-[#1f2937] w-full max-w-[18rem] p-4 shadow-xl shadow-blue-gray-900/5">
-            <!-- Aquí va tu formulario -->
-            <!-- Por ejemplo:
-        <form class="p-4 bg-white">
-            ...contenido del formulario...
-        </form>
-        -->
-        <form id="form" method="POST">
-            @csrf
-            <label for="" class="text-white mb-5">Nombre</label><br>
-            <input type="text" value="" name="nombre" class="mb-2"><br>
 
-            <label for="" class="text-white mb-5">Apellidos</label><br>
-            <input type="text" value="" name="apellidos" class="mb-2"><br>
+        <div>
+            <div class="ml-10 mt-6 ">
+                <h1 class="text-4xl mb-4">Usuarios</h1>
+                <button
+                    class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm"
+                    onclick="modalHandler(true)">Agregar Usuario</button>
+                <div>
+                    <x-tablaUsuarios-component>
+                    </x-tablaUsuarios-component>
+                </div>
+            </div>
 
-            <label for="" class="text-white mb-5">CURP</label><br>
-            <input type="text" value="" name="curp" class="mb-2"><br>
-
-            <label for="" class="text-white mb-5">RFC</label><br>
-            <input type="text" value="" name="rfc" class="mb-2"><br>
-
-            <label for="" class="text-white mb-5">Nacimiento</label><br>
-            <input type="date" value="" name="fecha_nac" class="mb-2"><br>
-
-            <label for="" class="text-white mb-5">Departamento</label><br>
-            <input type="text" value="" name="departamento" class="mb-2"><br>
-
-            <label for="" class="text-white mb-5">Puesto</label><br>
-            <input type="text" value="" name="puesto" class="mb-2"><br>
-
-            <label for="" class="text-white mb-5">Correo</label><br>
-            <input type="text" value="" name="correo" class="mb-2"><br>
-
-            <label for="" class="text-white mb-5">Numero telefonico</label><br>
-            <input type="number" value="" name="numero_telefonico" class="mb-2"><br>
-
-            <label for="" class="text-white mb-5">Tipo</label><br>
-            <input type="number" placeholder="Tipo de Usuario" name="tipo" class="mb-2"><br>
-
-            <x-primary-button class="mt-5">
-                Registrar
-            </x-primary-button>
-        </form>
         </div>
+
+
     </div>
+
+
+    <x-dh-component>
+    </x-dh-component>
+
 
     <script>
         // Manejar el evento de envío del formulario
         document.getElementById('form').addEventListener('submit', function(event) {
             // Prevenir la acción por defecto (recargar la página)
             event.preventDefault();
-    
+
             // Obtener los datos del formulario
             var formData = new FormData(this);
-    
+
             // Realizar una solicitud asíncrona usando Axios
             axios.post('/administracion', formData)
                 .then(function(response) {

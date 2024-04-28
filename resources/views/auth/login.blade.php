@@ -11,11 +11,12 @@
                 <form class="mt-4" method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="mb-3">
-                        <x-input-label style="color:black" class="mb-2 block  font-semibold" for="idEmpleado" :value="__('idEmpleado')" />
-                        <x-text-input type="text" name="idEmpleado" id="idEmpleado" :value="old('idEmpleado')"
-                            placeholder="ID"
+                        <x-input-label style="color:black" class="mb-2 block  font-semibold" for="email" :value="__('Email')" />
+                        <x-text-input type="email" name="email" id="email" :value="old('email')"
+                            placeholder="Email"
                             style="background:#77472B; color:white;"
                             class="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5" />
+                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
                     </div>
 
                     <div class="mb-3">

@@ -42,7 +42,7 @@ style="background: #6b3a1e;">
 
                         <x-slot name="content">
                             <x-dropdown-link :href="route('profile.edit')">
-                                {{ __('Profile') }}
+                                {{ __('Cambiar contraseña') }}
                             </x-dropdown-link>
 
                             <!-- Authentication -->
@@ -52,7 +52,7 @@ style="background: #6b3a1e;">
                                 <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                                    {{ __('Log Out') }}
+                                    {{ __('Salir') }}
                                 </x-dropdown-link>
                             </form>
                         </x-slot>
@@ -92,7 +92,7 @@ style="background: #6b3a1e;">
 
                 <div class="mt-3 space-y-1">
                     <x-responsive-nav-link :href="route('profile.edit')">
-                        {{ __('Profile') }}
+                        {{ __('Cambiar contraseña') }}
                     </x-responsive-nav-link>
 
                     <!-- Authentication -->
@@ -102,7 +102,7 @@ style="background: #6b3a1e;">
                         <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                 this.closest('form').submit();">
-                            {{ __('Log Out') }}
+                            {{ __('Salir') }}
                         </x-responsive-nav-link>
                     </form>
                 </div>

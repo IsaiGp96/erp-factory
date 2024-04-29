@@ -75,9 +75,13 @@ class AdministracionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Administracion $administracion)
+    public function edit( $administracion)
     {
-        //
+        
+        $administracion = Empleados::findOrFail($administracion);
+        return view('administracion.editar',[
+            'usuario' => $administracion 
+        ]);
     }
 
     /**

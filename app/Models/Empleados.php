@@ -12,6 +12,8 @@ class Empleados extends Model
 
     use HasFactory;
 
+    protected $primaryKey = 'id_empleado';
+    
     protected $fillable = [
         'nombre',
         'apellidos',

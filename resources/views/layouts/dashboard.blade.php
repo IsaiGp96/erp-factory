@@ -68,7 +68,7 @@
             </nav>
         </div>
 
-        <div class="overflow-y-auto">{{ $slot }}</div>
+        <div >{{ $slot }}</div>
 
        
 

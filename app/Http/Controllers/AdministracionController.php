@@ -61,7 +61,7 @@ class AdministracionController extends Controller
     ]);
 
     return to_route('administracion.registroUsuarios');
-    
+
     }
 
     /**
@@ -77,10 +77,10 @@ class AdministracionController extends Controller
      */
     public function edit( $administracion)
     {
-        
+
         $administracion = Empleados::findOrFail($administracion);
         return view('administracion.editar',[
-            'usuario' => $administracion 
+            'usuario' => $administracion
         ]);
     }
 

@@ -1,7 +1,7 @@
 <!-- component -->
 <!-- Code block starts -->
 <editar-usuario>
-    
+
     <form method="POST" id="editarUsuario" action="{{ route('administracion.registroUsuarios') }}">
         @csrf
 
@@ -10,7 +10,7 @@
             <div role="alert" class="container mx-auto w-11/12 md:w-2/3 max-w-lg">
                 <div class="relative py-8 px-5 md:px-10 bg-white shadow-md rounded border border-gray-400">
 
-                    <h1 class="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Edicion de usuario
+                    <h1 class="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Edición de usuario
                     </h1>
 
                     <div class="flex">
@@ -19,7 +19,7 @@
                             {{-- Nombre --}}
                             <label for="nombre"
                                 class="text-gray-800 text-sm font-bold leading-tight tracking-normal mb-1">Nombre</label>
-                            <input id="nombre" name="nombre" 
+                            <input id="nombre" name="nombre"
                                 class="mb-1 mt-1 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-9 flex items-center text-sm border-gray-300 rounded border "
                                 placeholder="Nombre" value="{{ $usuario->nombre }}" />
                         </div>
@@ -30,7 +30,7 @@
                                 class="text-gray-800 text-sm font-bold leading-tight tracking-normal mb-1">Apellidos</label>
                             <input id="apellido" name='apellidos'
                                 class="mb-1 mt-1 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-9 flex items-center  text-sm border-gray-300 rounded border "
-                                placeholder="Apellido" value="{{ $usuario->apellidos }}"/>
+                                placeholder="Apellido" value="{{ $usuario->apellidos }}" />
                         </div>
                     </div>
 
@@ -42,7 +42,7 @@
                                 class="text-gray-800 text-sm font-bold leading-tight tracking-normal">CURP</label>
                             <input id="curp" name="curp"
                                 class="mb-1 mt-1 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-9 flex items-center text-sm border-gray-300 rounded border"
-                                placeholder="CURP" value="{{ $usuario->curp }}"/>
+                                placeholder="CURP" value="{{ $usuario->curp }}" />
                         </div>
 
                         <div class="flex-auto pl-2">
@@ -51,7 +51,7 @@
                                 class="text-gray-800 text-sm font-bold leading-tight tracking-normal">RFC</label>
                             <input id="rfc" name="rfc"
                                 class="mb-1 mt-1 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-9 flex items-center text-sm border-gray-300 rounded border"
-                                placeholder="RFC" value="{{ $usuario->rfc }}"/>
+                                placeholder="RFC" value="{{ $usuario->rfc }}" />
                         </div>
                     </div>
 
@@ -71,7 +71,7 @@
                                 class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Departamento</label>
                             <input id="departamento" name="departamento"
                                 class="mb-1 mt-1 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-9 flex items-center text-sm border-gray-300 rounded border"
-                                type="text" placeholder="Departamento" value="{{ $usuario->departamento }}"/>
+                                type="text" placeholder="Departamento" value="{{ $usuario->departamento }}" />
                         </div>
                     </div>
 
@@ -82,7 +82,7 @@
                                 class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Puesto</label>
                             <input id="puesto" name="puesto"
                                 class="mb-1 mt-1 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-9 flex items-center text-sm border-gray-300 rounded border"
-                                type="text" placeholder="Puesto" value="{{ $usuario->puesto }}"/>
+                                type="text" placeholder="Puesto" value="{{ $usuario->puesto }}" />
                         </div>
 
                         <div class="flex-auto pl-2">
@@ -103,7 +103,7 @@
                                 class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Telefono</label>
                             <input id="telefono" name="numero_telefonico"
                                 class="mb-1 mt-1 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-9 flex items-center text-sm border-gray-300 rounded border"
-                                type="number" placeholder="Telefono" value="{{ $usuario->numero_telefonico }}"/>
+                                type="number" placeholder="Telefono" value="{{ $usuario->numero_telefonico }}" />
                         </div>
 
                         <div class="flex-auto pl-2">
@@ -113,7 +113,7 @@
                                 de Usuario</label>
 
                             <select name="tipo" id="tipo"
-                                class="mb-1 mt-1 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-9 flex items-center text-sm border-gray-300 rounded border" >
+                                class="mb-1 mt-1 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-9 flex items-center text-sm border-gray-300 rounded border">
                                 <option selected disabled value="{{ $usuario->tipo }}"></option>
                                 <option value="1">Administrativo</option>
                                 <option value="2">Almacén</option>
@@ -123,7 +123,7 @@
 
                     </div>
 
-                    
+
 
 
                     <div class="flex items-center justify-start w-full mt-4">
@@ -153,58 +153,58 @@
 </editar-usuario>
 
 
-    <script>
-        // Agrega un listener para el evento DOMContentLoaded
+<script>
+    // Agrega un listener para el evento DOMContentLoaded
     document.addEventListener("DOMContentLoaded", function() {
         // Llama a tu función cuando se dispare el evento DOMContentLoaded
         modalHandler(true)
     });
-        
-        let modal = document.getElementById("modalEdit");
 
-        // Adjuntar evento de teclado al documento
-        document.addEventListener("keydown", handleKeyPress);
+    let modal = document.getElementById("modalEdit");
 
-        // Función para manejar el evento de teclado
-        function handleKeyPress(event) {
-            if (event.key === "Escape") {
-                modalHandler(false); // Cerrar el modal cuando se presione la tecla "Escape"
-            }
+    // Adjuntar evento de teclado al documento
+    document.addEventListener("keydown", handleKeyPress);
+
+    // Función para manejar el evento de teclado
+    function handleKeyPress(event) {
+        if (event.key === "Escape") {
+            modalHandler(false); // Cerrar el modal cuando se presione la tecla "Escape"
         }
+    }
 
 
 
-        function modalHandler(val ) {
-            if (val) {
-                fadeIn(modal);
+    function modalHandler(val) {
+        if (val) {
+            fadeIn(modal);
+        } else {
+            fadeOut(modal);
+        }
+    }
+
+    function fadeOut(el) {
+        el.style.opacity = 1;
+        (function fade() {
+            if ((el.style.opacity -= 0.1) < 0) {
+                el.style.display = "none";
             } else {
-                fadeOut(modal);
+                requestAnimationFrame(fade);
             }
-        }
+        })();
+    }
 
-        function fadeOut(el) {
-            el.style.opacity = 1;
-            (function fade() {
-                if ((el.style.opacity -= 0.1) < 0) {
-                    el.style.display = "none";
-                } else {
-                    requestAnimationFrame(fade);
-                }
-            })();
-        }
-
-        function fadeIn(el, display) {
-            el.style.opacity = 0;
-            el.style.display = display || "flex";
-            (function fade() {
-                let val = parseFloat(el.style.opacity);
-                if (!((val += 0.2) > 1)) {
-                    el.style.opacity = val;
-                    requestAnimationFrame(fade);
-                }
-            })();
-        }
-    </script>
+    function fadeIn(el, display) {
+        el.style.opacity = 0;
+        el.style.display = display || "flex";
+        (function fade() {
+            let val = parseFloat(el.style.opacity);
+            if (!((val += 0.2) > 1)) {
+                el.style.opacity = val;
+                requestAnimationFrame(fade);
+            }
+        })();
+    }
+</script>
 
 
 <!-- Code block ends -->

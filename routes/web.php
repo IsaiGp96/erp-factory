@@ -38,6 +38,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/ventas',[VentasController::class, 'index'])->name('ventas.ventas');
+Route::get('/registroOrden',[VentasController::class, 'index'])->name('ventas.registro');
 
 
 require __DIR__.'/auth.php';

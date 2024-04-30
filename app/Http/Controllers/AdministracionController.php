@@ -8,6 +8,7 @@ use Illuminate\View\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Administracion;
 
 class AdministracionController extends Controller
 {
@@ -16,10 +17,12 @@ class AdministracionController extends Controller
      */
     public function index(): View
     {
-        return view('administracion.registroUsuarios', [
+        return view('administracion.usuarios', [
             'usuarios' => Empleados::all()
         ]);
     }
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -60,7 +63,7 @@ class AdministracionController extends Controller
         'tipo' => $tipo,
     ]);
 
-    return to_route('administracion.registroUsuarios');
+    return to_route('administracion.usuarios');
 
     }
 
@@ -79,7 +82,7 @@ class AdministracionController extends Controller
     {
 
         $administracion = Empleados::findOrFail($administracion);
-        return view('administracion.editar',[
+        return view('administracion.editarUsuarios',[
             'usuario' => $administracion
         ]);
     }
@@ -87,9 +90,24 @@ class AdministracionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Administracion $administracion)
+    public function update(Request $request,  $usuario)
     {
-        //
+        $validated = $request->validate([
+        'nombre' => ['required'],
+        'apellidos' => ['required'],
+        'curp' => ['required'],
+        'rfc' => ['required'],
+        'fecha_nac' => ['required'],
+        'departamento' => ['required'],
+        'puesto' => ['required'],
+        'correo' => ['required'],
+        'numero_telefonico' => ['required'],
+        'tipo' => ['required'],
+        ]);
+
+        $usuario->update($validated);
+
+        return to_route('administracion.usuarios');
     }
 
     /**

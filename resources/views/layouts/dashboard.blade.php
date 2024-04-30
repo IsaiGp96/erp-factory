@@ -21,7 +21,7 @@
                     Inicio
                 </a>
 
-                <a href="{{ route('administracion.registroUsuarios') }}"
+                <a href="{{ route('administracion.usuarios') }}"
                     class="flex items-center w-full p-2 py-5 rounded-lg text-start leading-tight transition-all @if (Request::is('administracion')) bg-blue-50 bg-opacity-80 text-blue-900 @else hover:bg-blue-50 hover:bg-opacity-80 hover:text-blue-900 @endif focus:bg-blue-50 focus:bg-opacity-80 focus:text-blue-900 active:bg-gray-50 active:bg-opacity-80 active:text-blue-900 outline-none">
                     <div class="grid place-items-center mr-4">
                         <svg fill="currentColor" stroke-width="0" viewBox="0 0 24 24" width="25px"

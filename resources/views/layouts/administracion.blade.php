@@ -1,6 +1,9 @@
 
 <x-dashboard-layout>
 
-    {{ $usuarios }}
+    <x-slot:usuarios>
+        
+    </x-slot:usuarios>
+    
     
 </x-dashboard-layout>

@@ -29,7 +29,7 @@ Route::post('/administracion/registroUsuarios',[AdministracionController::class,
 Route::get('/administracion/{usuario}/editarUsuarios', [AdministracionController::class,'edit'])->name('administracion.editarUsuarios');
 
 //Ruta con metodo update para conectar a la base de datos y realizar la actualizacion
-Route::put('/administracion/{usuario}/',[AdministracionController::class, 'update'])->name('administracion.update');
+Route::put('/administracion/usuarios/{usuario}',[AdministracionController::class, 'update'])->name('administracion.update');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

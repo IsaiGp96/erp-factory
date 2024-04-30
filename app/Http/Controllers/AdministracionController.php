@@ -90,8 +90,9 @@ class AdministracionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,  $usuario)
+    public function update(Request $request, $usuario)
     {
+        $empleado  = Empleados::findOrFail($usuario);
         $validated = $request->validate([
         'nombre' => ['required'],
         'apellidos' => ['required'],
@@ -105,9 +106,9 @@ class AdministracionController extends Controller
         'tipo' => ['required'],
         ]);
 
-        $usuario->update($validated);
+        $empleado ->update($validated);
 
-        return to_route('administracion.usuarios');
+        return redirect()->route('administracion.usuarios');
     }
 
     /**

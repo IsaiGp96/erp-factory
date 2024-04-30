@@ -44,7 +44,7 @@
                             class="text-gray-800 text-2xl font-bold leading-tight tracking-normal">RFC</label>
                         <input id="rfc" name="rfc"
                             class="mb-1 mt-1 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-9 flex items-center text-xl border-gray-300 rounded border"
-                            placeholder="RFC" />
+                            placeholder="RFC" value="{{ $usuario->rfc }}"/>
                     </div>
                 </div>
 
@@ -121,7 +121,7 @@
 
                 <div class="flex items-center justify-start w-full mt-4">
                     <button
-                        class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-xl">Actualizar</button>
+                        class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-xl" type="submit">Actualizar</button>
                     <a href="{{ route('administracion.usuarios') }}"
                         class="focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3 bg-gray-100 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400 hover:bg-gray-300 border rounded px-8 py-2 text-xl">Volver</a>
                 </div>

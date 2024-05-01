@@ -62,13 +62,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-<<<<<<< HEAD
 Route::get('/ventas',[VentasController::class, 'index'])->name('ventas.ventas');
 Route::get('/registroOrden',[VentasController::class, 'index'])->name('ventas.registro');
 Route::get('/fabrica',[FabricaController::class, 'index'])->name('fabrica.main');
-=======
-
->>>>>>> f539afe731dbf06a329a0edf1e96f9fe8784b874
 
 
 require __DIR__.'/auth.php';

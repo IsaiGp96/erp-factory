@@ -37,45 +37,32 @@ class VentasController extends Controller
      */
     public function store(Request $request)
     {
-        //Se reciben datos del form
-    $id = $request->get('id');
-    $piel = $request->get('piel');
-    $horma = $request->get('horma');
-    $suela = $request->get('suela');
-    $tubo = $request->get('tubo');
-    $abono = $request->get('abono');
-    $precio = $request->get('precio');
-    $anticipo = $request->get('anticipo');
-    $tipo_venta = $request->get('tipo_venta');
-    $nombre = $request->get('nombre');
-    $apellidos = $request->get('apellidos');
-    $correo = $request->get('correo');
-    $numero_telefonico = $request->get('numero_telefonico');
-    $tipo = $request->get('tipo');
-    $fecha = $request->get('fecha');
+        // Recibe los datos del formulario
+        $data = $request->validate([
+            'id' => 'required',
+            'piel' => 'required',
+            'horma' => 'required',
+            'suela' => 'required',
+            'tubo' => 'required',
+            'abono' => 'required',
+            'precio' => 'required',
+            'anticipo' => 'required',
+            'tipo_venta' => 'required',
+            'nombre' => 'required',
+            'apellidos' => 'required',
+            'correo' => 'required|email',
+            'numero_telefonico' => 'required',
+            'tipo' => 'required',
+            'fecha' => 'required|date',
+        ]);
 
-    //INSERT INTO DATABASE
-    Empleados::create([
-        'id' => $id,
-        'piel' => $piel,
-        'horma'=> $horma,
-        'suela' => $suela,
-        'tubo' => $tubo,
-        'abono' => $abono,
-        'precio' => $precio,
-        'anticipo' => $anticipo,
-        'tipo_venta'=> $tipo_venta,
-        'nombre' => $nombre,
-        'apellidos' => $apellidos,
-        'correo' => $correo,
-        'numero_telefonico' => $numero_telefonico,
-        'tipo' => $tipo,
-        'fecha'=> $fecha
-    ]);
+        // Crea una nueva instancia de Venta con los datos recibidos
+        $venta = Venta::create($data);
 
-    return to_route('ventas.ventas');
-
+        // Redirige a la vista de ventas
+        return redirect()->route('ventas.index');
     }
+
 
     /**
      * Display the specified resource.

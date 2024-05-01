@@ -11,29 +11,33 @@
                 <form class="mt-4" method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="mb-3">
-                        <x-input-label style="color:black" class="mb-2 block  font-semibold" for="email" :value="__('Email')" />
-                        <x-text-input type="email" name="email" id="email" :value="old('email')"
-                            placeholder="Email"
+                        <x-input-label style="color:black" class="mb-2 block  font-semibold" for="email"
+                            :value="__('Email')" />
+                        <x-text-input type="email" name="email" id="email" :value="old('email')" placeholder="Email"
                             style="background:#77472B; color:white;"
                             class="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5" />
-                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
                     </div>
 
                     <div class="mb-3">
-                        <x-input-label style="color:black" class="mb-2 block text-xs font-semibold" for="password" :value="__('Password')" />
+                        <x-input-label style="color:black" class="mb-2 block text-xs font-semibold" for="password"
+                            :value="__('Password')" />
                         <x-text-input type="password" id="password" name="password" :value="old('password')"
-                            style="background:#77472B; color:white;"
-                            placeholder="Contraseña"
+                            style="background:#77472B; color:white;" placeholder="Contraseña"
                             class="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" />
                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
                     </div>
 
-                    <div class="mb-3" style="text-align: -webkit-center;">
-                        <button type="submit"
-                            class="block w-60 text-center text-white bg hover:bg-gray-300 pt-5 rounded-md"
-                            style="background:#77472B;">Iniciar
-                            Sesión</button>
+                    <div class="flex items-center justify-center h-full">
+                        <div class="mb-3">
+                            <button type="submit"
+                                class="block w-60 h-12 text-white bg-gray-700 hover:bg-gray-900 rounded-md"
+                                style="background:#77472B;">
+                                Iniciar Sesión
+                            </button>
+                        </div>
                     </div>
+
                 </form>
             </div>
         </div>

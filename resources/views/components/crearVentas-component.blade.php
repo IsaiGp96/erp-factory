@@ -68,9 +68,15 @@
                     </div>
                     <div class="space-y-4">
                         <div class="space-y-2">
-                            <label for="tipo_venta" class="block">Tipo de Venta</label>
-                            <input id="tipo_venta" name="tipo_venta" placeholder="Ingresa tipo de venta" type="text"
-                                class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></input>
+                        <label for="tipo" class="block text-gray-600 text-lg font-bold leading-tight">Tipo de
+                            venta</label>
+                        <select name="tipo" id="tipo"
+                            class="w-full mt-1 text-gray-600 focus:outline-none focus:border-indigo-700 border-gray-300 rounded border">
+                            <option selected disabled value="">Selecciona una opción</option>
+                            <option value="1">Stock</option>
+                            <option value="2">Mayoreo</option>
+                            <option value="3">Quinela</option>
+                        </select>
                         </div>
                         <div class="space-y-2">
                             <label for="correo" class="block">Correo Electrónico</label>

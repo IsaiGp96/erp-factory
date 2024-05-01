@@ -24,6 +24,7 @@ class CreateOrdenesTrabajoTable extends Migration
             $table->bigInteger('numero_telefonico')->nullable();
             $table->integer('tipo')->nullable();
             $table->date('fecha', 20);
+            $table->timestamps();
         });
     }
 

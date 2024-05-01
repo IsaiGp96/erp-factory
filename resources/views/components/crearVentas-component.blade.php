@@ -68,25 +68,26 @@
                     </div>
                     <div class="space-y-4">
                         <div class="space-y-2">
-                        <label for="tipo" class="block text-gray-600 text-lg font-bold leading-tight">Tipo de
-                            venta</label>
-                        <select name="tipo" id="tipo"
-                            class="w-full mt-1 text-gray-600 focus:outline-none focus:border-indigo-700 border-gray-300 rounded border">
-                            <option selected disabled value="">Selecciona una opción</option>
-                            <option value="1">Stock</option>
-                            <option value="2">Mayoreo</option>
-                            <option value="3">Quinela</option>
-                        </select>
+                            <label for="tipo_venta" class="block text-gray-600 text-lg font-bold leading-tight">Tipo de
+                                venta</label>
+                            <select name="tipo_venta" id="tipo_venta"
+                                class="w-full mt-1 text-gray-600 focus:outline-none focus:border-indigo-700 border-gray-300 rounded border">
+                                <option value="" selected disabled>Selecciona una opción</option>
+                                <option value="Stock">Stock</option>
+                                <option value="Mayoreo">Mayoreo</option>
+                                <option value="Quinela">Quinela</option>
+                            </select>
                         </div>
                         <div class="space-y-2">
                             <label for="correo" class="block">Correo Electrónico</label>
-                            <input id="correo" name="correo" placeholder="Ingresa correo electrónico" type="text"
+                            <input id="correo" name="correo" placeholder="Ingresa correo electrónico"
+                                type="text"
                                 class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></input>
                         </div>
                         <div class="space-y-2">
                             <label for="numero_telefonico" class="block">Numero Telefónico</label>
-                            <input id="numero_telefonico" name="numero_telefonico" placeholder="614-123-4567" type="number"
-                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                            <input id="numero_telefonico" name="numero_telefonico" placeholder="614-123-4567"
+                                type="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                                 class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></input>
                         </div>
                         <div class="space-y-2">
@@ -103,7 +104,7 @@
                 </div>
                 <div class="flex justify-start mt-5">
                     <div class="mr-4">
-                        <button type="submit" id="createModalBtn" 
+                        <button type="submit" id="createModalBtn"
                             class="inline-flex items-center justify-center px-6 py-2 text-sm font-medium text-white bg-blue-500 border border-transparent rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
                             Crear
                         </button>

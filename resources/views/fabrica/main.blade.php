@@ -74,7 +74,7 @@
                 <div class="space-y-4">
                     <div class="space-y-2">
                         <label for="tipo_venta" class="block">Tipo de Venta</label>
-                        <input id="tipo_venta" placeholder="Ingresa tipo de venta" type="text"
+                        <input id="tipo_venta" name="tipo_venta" placeholder="Ingresa tipo de venta" type="text"
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></input>
                     </div>
                     <div class="space-y-2">

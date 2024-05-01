@@ -8,9 +8,9 @@ use Illuminate\View\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\ProfileUpdateRequest;
-use App\Models\Venta;
+use App\Models\OrdenesTrabajo;
 
-class VentasController extends Controller
+class  VentasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class VentasController extends Controller
     public function index(): View
     {
         return view('ventas.ventas', [
-            'usuarios' => Empleados::all()
+            'ordenesTrabajo' => OrdenesTrabajo::all()
         ]);
     }
 
@@ -37,8 +37,27 @@ class VentasController extends Controller
      */
     public function store(Request $request)
     {
+
+        OrdenesTrabajo::create([
+            'id' => $request->get('id'),
+            'piel' => $request->get('piel'),
+            'horma' => $request->get('horma'),
+            'suela' => $request->get('suela'),
+            'tubo' => $request->get('tubo'),
+            'abono' => $request->get('abono'),
+            'precio' => $request->get('precio'),
+            'anticipo' => $request->get('anticipo'),
+            'tipo_venta' => $request->get('tipo_venta'),
+            'nombre' => $request->get('nombre'),
+            'apellidos' => $request->get('apellidos'),
+            'correo' => $request->get('correo'),
+            'numero_telefonico' => $request->get('numero_telefonico'),
+            'tipo' => $request->get('tipo'),
+            'fecha' => $request->get('fecha'),
+        ]);
+
         // Recibe los datos del formulario
-        $data = $request->validate([
+        $request->validate([
             'id' => 'required',
             'piel' => 'required',
             'horma' => 'required',
@@ -56,11 +75,10 @@ class VentasController extends Controller
             'fecha' => 'required|date',
         ]);
 
-        // Crea una nueva instancia de Venta con los datos recibidos
-        $venta = Venta::create($data);
+
 
         // Redirige a la vista de ventas
-        return redirect()->route('ventas.index');
+        return redirect()->route('ventas.ventas');
     }
 
 
@@ -75,12 +93,12 @@ class VentasController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit( $ventas)
+    public function edit($ventas)
     {
 
-        $ventas = Empleados::findOrFail($ventas);
-        return view('ventas.abonar',[
-            'usuario' => $ventas
+        $ventas = OrdenesTrabajo::findOrFail($ventas);
+        return view('ventas.editarVenta', [
+            'venta' => $ventas
         ]);
     }
 
@@ -89,28 +107,28 @@ class VentasController extends Controller
      */
     public function update(Request $request, $usuario)
     {
-        $empleado  = Empleados::findOrFail($usuario);
-        $validated = $request->validate([
-        'id' => ['required'],
-        'piel' => ['required'],
-        'horma' => ['required'],
-        'suela' => ['required'],
-        'tubo' => ['required'],
-        'abono' => ['required'],
-        'precio' => ['required'],
-        'anticipo' => ['required'],
-        'tipo_venta' => ['required'],
-        'nombre' => ['required'],
-        'apellidos' => ['required'],
-        'correo' => ['required'],
-        'numero_telefonico' => ['required'],
-        'tipo' => ['required'],
-        'fecha' => ['required'],
-        ]);
+        // $empleado  = Empleados::findOrFail($usuario);
+        // $validated = $request->validate([
+        // 'id' => ['required'],
+        // 'piel' => ['required'],
+        // 'horma' => ['required'],
+        // 'suela' => ['required'],
+        // 'tubo' => ['required'],
+        // 'abono' => ['required'],
+        // 'precio' => ['required'],
+        // 'anticipo' => ['required'],
+        // 'tipo_venta' => ['required'],
+        // 'nombre' => ['required'],
+        // 'apellidos' => ['required'],
+        // 'correo' => ['required'],
+        // 'numero_telefonico' => ['required'],
+        // 'tipo' => ['required'],
+        // 'fecha' => ['required'],
+        // ]);
 
-        $empleado ->update($validated);
+        // $empleado ->update($validated);
 
-        return redirect()->route('ventas.ventas');
+        // return redirect()->route('ventas.ventas');
     }
 
     /**

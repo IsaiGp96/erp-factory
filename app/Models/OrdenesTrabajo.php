@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Venta extends Model
+class OrdenesTrabajo extends Model
 {
     use HasFactory;
 
+    protected $table = 'ordenes_trabajo';
+    
     protected $fillable = [
         'id',
         'piel',
@@ -24,6 +26,6 @@ class Venta extends Model
         'correo',
         'numero_telefonico',
         'tipo',
-        'fecha'
+        'fecha',
     ];
 }

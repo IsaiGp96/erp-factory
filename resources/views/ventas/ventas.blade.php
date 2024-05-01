@@ -13,6 +13,7 @@
         </a>
     </div>
 
+<<<<<<< HEAD
     <!-- Vista emergente (modal) -->
     <div class="modal fixed inset-0 bg-black bg-opacity-50 flex hidden items-center justify-center">
         {{-- No borren el hidden --}}
@@ -126,11 +127,17 @@
                     <!-- Otros botones de acción si es necesario -->
                 </div>
             </div>
+=======
+    <x-crearVentas-component>
+    </x-crearVentas-component>
+>>>>>>> f539afe731dbf06a329a0edf1e96f9fe8784b874
 
+    <x-tablaVentas-component :ordenesTrabajo="$ordenesTrabajo">
+    </x-tablaVentas-component>
 
-        </div>
-    </div>
+    
 
+<<<<<<< HEAD
     <section class="container px-4 mx-auto mt-10">
         <div class="flex flex-col">
             <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -502,6 +509,9 @@
         </div>
     </section>
 </x-dashboard-layout>
+=======
+</x-app-layout>
+>>>>>>> f539afe731dbf06a329a0edf1e96f9fe8784b874
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Botón para abrir el modal
@@ -528,5 +538,14 @@
         closeModalBtns.forEach(btn => {
             btn.addEventListener('click', closeModal);
         });
+        // Función para manejar el evento de teclado
+        function handleKeyPress(event) {
+            if (event.key === "Escape") {
+                closeModal(); // Cerrar el modal cuando se presione la tecla "Escape"
+            }
+        }
+
+        // Adjuntar evento de teclado al documento
+        document.addEventListener("keydown", handleKeyPress);
     });
 </script>

@@ -13,7 +13,6 @@
         </a>
     </div>
 
-<<<<<<< HEAD
     <!-- Vista emergente (modal) -->
     <div class="modal fixed inset-0 bg-black bg-opacity-50 flex hidden items-center justify-center">
         {{-- No borren el hidden --}}
@@ -127,10 +126,6 @@
                     <!-- Otros botones de acción si es necesario -->
                 </div>
             </div>
-=======
-    <x-crearVentas-component>
-    </x-crearVentas-component>
->>>>>>> f539afe731dbf06a329a0edf1e96f9fe8784b874
 
     <x-tablaVentas-component :ordenesTrabajo="$ordenesTrabajo">
     </x-tablaVentas-component>

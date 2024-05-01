@@ -3,13 +3,8 @@
         <a id="openModalBtn" href="#"
             class="flex items-center justify-between px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-500 bg-white border rounded-md gap-x-2 hover:bg-gray-200 border-cyan-300">
             <span>
-                Crear nueva orden
+                Ordenes activas
             </span>
-
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-5 h-5 rtl:-scale-x-100">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-            </svg>
         </a>
     </div>
 
@@ -94,14 +89,9 @@
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></input>
                     </div>
                     <div class="space-y-2">
-                        <label for="tipo" class="block text-gray-600 text-lg font-bold leading-tight">Tipo de venta</label>
-                        <select name="tipo" id="tipo"
-                            class="w-full mt-1 text-gray-600 focus:outline-none focus:border-indigo-700 border-gray-300 rounded border">
-                            <option selected disabled value="">Selecciona una opción</option>
-                            <option value="1">Mayoreo</option>
-                            <option value="2">Stock</option>
-                            <option value="3">Quinela</option>
-                        </select>
+                        <label for="tipo" class="block">Tipo</label>
+                        <input id="tipo" placeholder="Ingresa tipo" type="text"
+                            class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></input>
                     </div>
                     <div class="space-y-2">
                         <label for="fecha" class="block">Fecha</label>

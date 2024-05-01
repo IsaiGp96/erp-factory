@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdministracionController;
+use App\Http\Controllers\FabricaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VentasController;
 
@@ -39,6 +40,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/ventas',[VentasController::class, 'index'])->name('ventas.ventas');
 Route::get('/registroOrden',[VentasController::class, 'index'])->name('ventas.registro');
+Route::get('/fabrica',[FabricaController::class, 'index'])->name('fabrica.main');
 
 
 require __DIR__.'/auth.php';

@@ -47,7 +47,6 @@ class VentasController extends Controller
     $precio = $request->get('precio');
     $anticipo = $request->get('anticipo');
     $tipo_venta = $request->get('tipo_venta');
-    $tipo_venta = $request->get('tipo_venta');
     $nombre = $request->get('nombre');
     $apellidos = $request->get('apellidos');
     $correo = $request->get('correo');

@@ -97,23 +97,22 @@
                                         </td>
                                         <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
                                             {{ $ordenTrabajo->tipo }}</td>
+
                                         <td class="px-4 py-4 text-sm whitespace-nowrap">
+
                                             <div class="flex items-center gap-x-6">
                                                 @include('ventas.modalEditVentas')
-                                                <button id="openModalEdit"
-                                                
-                                                        data-target="#editarVenta{{ $ordenTrabajo->id }}"
-                                                        
-                                                        class="text-gray-500 transition-colors duration-200  hover:text-indigo-500 focus:outline-none">
-                                                        
-                                                        Editar
-                                                    </button>
+                                                <button data-target="#editarVenta{{ $ordenTrabajo->id }}"
+                                                    class="openModalEdit text-gray-500 transition-colors duration-200  hover:text-indigo-500 focus:outline-none">
+
+                                                    Editar
+                                                </button>
 
                                                 <button
                                                     class="text-blue-500 transition-colors duration-200 hover:text-indigo-500 focus:outline-none">
                                                     Eliminar
                                                 </button>
-                                                
+
                                             </div>
 
                                         </td>
@@ -137,7 +136,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Botón para abrir el modal
-        const openModalEditBtn = document.getElementById('openModalEdit');
+        const openModalEditBtns = document.querySelectorAll('.openModalEdit');
         // Botones para cerrar el modal
         const closeModalEditBtns = document.querySelectorAll('#closeModalEdit');
         // Modal
@@ -153,9 +152,10 @@
             modalEdit.classList.add('hidden');
         }
 
-        // Agrega un evento de clic al botón para abrir el modal
-        openModalEditBtn.addEventListener('click', openModalEdit);
-
+        // Agrega un evento de clic a todos los botones para abrir el modal
+        openModalEditBtns.forEach(btn => {
+            btn.addEventListener('click', openModalEdit);
+        });
         // Agrega un evento de clic a todos los botones para cerrar el modal
         closeModalEditBtns.forEach(btn => {
             btn.addEventListener('click', closeModalEdit);

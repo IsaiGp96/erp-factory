@@ -1,13 +1,13 @@
 <!-- Vista emergente (modal) -->
 <!-- Vista emergente (modal) -->
-<div class="modalEdit fixed inset-0 bg-black bg-opacity-50 flex hidden items-center justify-center">
+<div  id="editarVenta{{ $ordenTrabajo->id }}" class="modalEdit fixed inset-0 bg-black bg-opacity-50 flex hidden items-center justify-center">
     {{-- No borren el hidden --}}
     <div class="modal-content bg-white p-8 rounded-md">
         <div class="modal-header">
             <h5 class="modal-title text-xl" id="exampleModalLabel">Editar Orden</h5>
             <button type="button" id="closeModalEdit" class="btn-close" aria-label="Close"></button>
         </div>
-        <form id="editarVentas{{ $ordenTrabajo->id }}" method="POST"
+        <form  method="POST"
             action="{{ route('ventas.editarVenta', $ordenTrabajo->id) }}">
             @csrf
             @method('PUT')

@@ -14,10 +14,6 @@
 
                 </x-tablaUsuarios-component>
 
-                
-
-
-
             </div>
         </div>
     </div>
@@ -57,4 +53,13 @@
             }
         })();
     }
+
+    function handleKeyPress(event) {
+            if (event.key === "Escape") {
+                modalHandler(false); // Cerrar el modal cuando se presione la tecla "Escape"
+            }
+        }
+
+        // Adjuntar evento de teclado al documento
+        document.addEventListener("keydown", handleKeyPress);
 </script>

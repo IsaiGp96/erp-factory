@@ -27,11 +27,9 @@ Route::get('/administracion/registroUsuarios', function() {
 //Ruta post para registroUsuario
 Route::post('/administracion/registroUsuarios',[AdministracionController::class, 'store'])->name('administracion.store');
 
-//Ruta cargar la vista de edicion con el metodo edit para obtener el id del usuario y pasarlo como parametro
-Route::get('/administracion/{usuario}/editarUsuarios', [AdministracionController::class,'edit'])->name('administracion.editarUsuarios');
 
 //Ruta con metodo update para conectar a la base de datos y realizar la actualizacion
-Route::put('/administracion/usuarios/{usuario}',[AdministracionController::class, 'update'])->name('administracion.update');
+Route::put('/administracion/modalEditarUsuarios/{usuario}',[AdministracionController::class, 'update'])->name('administracion.editarUsuario');
 
 //------------------- END USUARIOS ------------------------------------------------------------------------------------------------------------
 
@@ -47,7 +45,7 @@ Route::post('/ventas', [VentasController::class, 'store']) ->name('ventas.store'
 //Ruta cargar la vista de edicion con el metodo edit para obtener el id del usuario y pasarlo como parametro
 Route::put('/ventas/modalEditVentas/{venta}', [VentasController::class,'update'])->name('ventas.editarVenta');
 
-Route::get('/registroOrden',[VentasController::class, 'index'])->name('ventas.registro');
+
 
 //------------------- END VENTAS ------------------------------------------------------------------------------------------------------------
 

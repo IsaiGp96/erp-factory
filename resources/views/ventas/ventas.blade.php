@@ -25,7 +25,6 @@
 
 </x-dashboard-layout>
 <script>
-
     document.addEventListener('DOMContentLoaded', function() {
         // Botón para abrir el modal
         const openModalBtn = document.getElementById('openModalBtn');
@@ -62,9 +61,6 @@
         document.addEventListener("keydown", handleKeyPress);
 
 
-         
+
     });
-
-   
 </script>
-

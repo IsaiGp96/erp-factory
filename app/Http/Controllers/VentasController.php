@@ -126,7 +126,26 @@ class  VentasController extends Controller
         $datosVenta -> tipo =  $request->tipo;
         $datosVenta -> fecha =  $request->fecha;
 
-        $datosVenta->save();
+         // Realiza la validación de los datos
+    $validatedData = $request->validate([
+        'id' => ['required'],
+        'piel' => ['required'],
+        'horma' => ['required'],
+        'suela' => ['required'],
+        'tubo' => ['required'],
+        'abono' => ['required'],
+        'precio' => ['required'],
+        'anticipo' => ['required'],
+        'tipo_venta' => ['required'],
+        'nombre' => ['required'],
+        'apellidos' => ['required'],
+        'correo' => ['required'],
+        'numero_telefonico' => ['required'],
+        'tipo' => ['required'],
+        'fecha' => ['required'],
+    ]);
+
+        $datosVenta->save($validatedData);
 
         return redirect()->route('ventas.ventas');
 

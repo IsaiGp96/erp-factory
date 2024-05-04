@@ -1,4 +1,0 @@
-<editarVentasModal-component>
- 
-
-</editarVentasModal-component>

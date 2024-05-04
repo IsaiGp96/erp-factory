@@ -82,7 +82,7 @@ class AdministracionController extends Controller
     {
 
         $administracion = Empleados::findOrFail($administracion);
-        return view('administracion.editarUsuarios',[
+        return view('administracion.editarUsuario',[
             'usuario' => $administracion
         ]);
     }
@@ -92,8 +92,21 @@ class AdministracionController extends Controller
      */
     public function update(Request $request, $usuario)
     {
-        $empleado  = Empleados::findOrFail($usuario);
-        $validated = $request->validate([
+        $datosEmpleado  = Empleados::findOrFail($usuario);
+
+        $datosEmpleado -> nombre =  $request->nombre;
+        $datosEmpleado -> apellidos =  $request->apellidos;
+        $datosEmpleado -> curp =  $request->curp;
+        $datosEmpleado -> rfc =  $request->rfc;
+        $datosEmpleado -> fecha_nac =  $request->fecha_nac;
+        $datosEmpleado -> departamento =  $request->departamento;
+        $datosEmpleado -> puesto =  $request->puesto;
+        $datosEmpleado -> correo =  $request->correo;
+        $datosEmpleado -> numero_telefonico =  $request->numero_telefonico;
+        $datosEmpleado -> tipo =  $request->tipo;
+       
+
+        $validatedData = $request->validate([
         'nombre' => ['required'],
         'apellidos' => ['required'],
         'curp' => ['required'],
@@ -106,7 +119,7 @@ class AdministracionController extends Controller
         'tipo' => ['required'],
         ]);
 
-        $empleado ->update($validated);
+        $datosEmpleado ->update($validatedData);
 
         return redirect()->route('administracion.usuarios');
     }

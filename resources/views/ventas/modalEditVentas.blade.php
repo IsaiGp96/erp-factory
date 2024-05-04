@@ -1,6 +1,6 @@
 <!-- Vista emergente (modal) -->
- <!-- Vista emergente (modal) -->
- <div class="modalEdit fixed inset-0 bg-black bg-opacity-50 flex hidden items-center justify-center">
+<!-- Vista emergente (modal) -->
+<div class="modalEdit fixed inset-0 bg-black bg-opacity-50 flex hidden items-center justify-center">
     {{-- No borren el hidden --}}
     <div class="modal-content bg-white p-8 rounded-md">
         <div class="modal-header">
@@ -16,54 +16,64 @@
                 <div class="space-y-4">
                     <div class="space-y-2">
                         <label for="order-id" class="block">Order ID</label> {{-- Aqui podriamos setearlo ya el siguiente id con un contador de ordenes --}}
-                        <input id="order-id" name="id" type="text" placeholder="Enter Order ID" value="{{ $ordenTrabajo->id }}"
+                        <input id="order-id" name="id" type="text" placeholder="Enter Order ID"
+                            value="{{ $ordenTrabajo->id }}"
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
                     </div>
                     <div class="space-y-2">
                         <label for="piel" class="block">Piel</label>
-                        <input id="piel" name="piel" type="text" placeholder="Ingresa tipo de piel" value="{{ $ordenTrabajo->piel }}"
+                        <input id="piel" name="piel" type="text" placeholder="Ingresa tipo de piel"
+                            value="{{ $ordenTrabajo->piel }}"
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
                     </div>
                     <div class="space-y-2">
                         <label for="horma" class="block">Horma</label>
-                        <input id="horma" name="horma" type="text" placeholder="Ingresa horma" value="{{ $ordenTrabajo->horma }}"
+                        <input id="horma" name="horma" type="text" placeholder="Ingresa horma"
+                            value="{{ $ordenTrabajo->horma }}"
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
                     </div>
                     <div class="space-y-2">
                         <label for="suela" class="block">Suela</label>
-                        <input id="suela" name="suela" type="text" placeholder="Ingresa suela" value="{{ $ordenTrabajo->suela }}"
+                        <input id="suela" name="suela" type="text" placeholder="Ingresa suela"
+                            value="{{ $ordenTrabajo->suela }}"
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
                     </div>
                     <div class="space-y-2">
                         <label for="tubo" class="block">Tubo</label>
-                        <input id="tubo" name="tubo" type="text" placeholder="Ingresa tubo" value="{{ $ordenTrabajo->tubo }}"
+                        <input id="tubo" name="tubo" type="text" placeholder="Ingresa tubo"
+                            value="{{ $ordenTrabajo->tubo }}"
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
                     </div>
                 </div>
                 <div class="space-y-4">
                     <div class="space-y-2">
                         <label for="abono" class="block">Abono</label>
-                        <input id="abono" name="abono" placeholder="$" type="number" value="{{ $ordenTrabajo->abono }}"
+                        <input id="abono" name="abono" placeholder="$" type="number"
+                            value="{{ $ordenTrabajo->abono }}"
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></input>
                     </div>
                     <div class="space-y-2">
                         <label for="precio" class="block">Precio</label>
-                        <input id="precio" name="precio" placeholder="$" type="number" value="{{ $ordenTrabajo->precio }}"
+                        <input id="precio" name="precio" placeholder="$" type="number"
+                            value="{{ $ordenTrabajo->precio }}"
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></input>
                     </div>
                     <div class="space-y-2">
                         <label for="anticipo" class="block">Anticipo</label>
-                        <input id="anticipo" name="anticipo" placeholder="$" type="number" value="{{ $ordenTrabajo->anticipo }}"
+                        <input id="anticipo" name="anticipo" placeholder="$" type="number"
+                            value="{{ $ordenTrabajo->anticipo }}"
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></input>
                     </div>
                     <div class="space-y-2">
                         <label for="nombre" class="block">Nombre</label>
-                        <input id="nombre" name="nombre" placeholder="Ingresa nombre" type="text" value="{{ $ordenTrabajo->nombre }}"
+                        <input id="nombre" name="nombre" placeholder="Ingresa nombre" type="text"
+                            value="{{ $ordenTrabajo->nombre }}"
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></input>
                     </div>
                     <div class="space-y-2">
                         <label for="apellido" class="block">Apellido(s)</label>
-                        <input id="apellido" name="apellidos" placeholder="Ingresa apellido(s)" type="text" value="{{ $ordenTrabajo->apellidos }}"
+                        <input id="apellido" name="apellidos" placeholder="Ingresa apellido(s)" type="text"
+                            value="{{ $ordenTrabajo->apellidos }}"
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></input>
                     </div>
                 </div>
@@ -81,23 +91,27 @@
                     </div>
                     <div class="space-y-2">
                         <label for="correo" class="block">Correo Electrónico</label>
-                        <input id="correo" name="correo" placeholder="Ingresa correo electrónico" type="text" value="{{ $ordenTrabajo->correo }}"
+                        <input id="correo" name="correo" placeholder="Ingresa correo electrónico" type="text"
+                            value="{{ $ordenTrabajo->correo }}"
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></input>
                     </div>
                     <div class="space-y-2">
                         <label for="numero_telefonico" class="block">Numero Telefónico</label>
-                        <input id="numero_telefonico" name="numero_telefonico" placeholder="6141234567" value="{{ $ordenTrabajo->numero_telefonico }}"
-                            type="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        <input id="numero_telefonico" name="numero_telefonico" placeholder="6141234567"
+                            value="{{ $ordenTrabajo->numero_telefonico }}" type="number"
+                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></input>
                     </div>
                     <div class="space-y-2">
                         <label for="tipo" class="block">Tipo</label>
-                        <input id="tipo" name="tipo" placeholder="Ingresa tipo" type="number" value="{{ $ordenTrabajo->tipo }}"
+                        <input id="tipo" name="tipo" placeholder="Ingresa tipo" type="number"
+                            value="{{ $ordenTrabajo->tipo }}"
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></input>
                     </div>
                     <div class="space-y-2">
                         <label for="fecha" class="block">Fecha</label>
-                        <input id="fecha" name="fecha" placeholder="Ingresa fecha" type="date" value="{{ $ordenTrabajo->fecha }}"
+                        <input id="fecha" name="fecha" placeholder="Ingresa fecha" type="date"
+                            value="{{ $ordenTrabajo->fecha }}"
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></input>
                     </div>
                 </div>

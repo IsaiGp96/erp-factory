@@ -45,7 +45,7 @@ Route::get('/ventas',[VentasController::class, 'index'])->name('ventas.ventas');
 Route::post('/ventas', [VentasController::class, 'store']) ->name('ventas.store');
 
 //Ruta cargar la vista de edicion con el metodo edit para obtener el id del usuario y pasarlo como parametro
-Route::get('/ventas/{venta}', [VentasController::class,'edit'])->name('ventas.editarVenta');
+Route::put('/ventas/modalEditVentas/{venta}', [VentasController::class,'update'])->name('ventas.editarVenta');
 
 Route::get('/registroOrden',[VentasController::class, 'index'])->name('ventas.registro');
 

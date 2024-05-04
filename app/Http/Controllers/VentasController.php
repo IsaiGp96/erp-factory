@@ -105,9 +105,31 @@ class  VentasController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $usuario)
+    public function update(Request $request, $venta)
     {
-        // $empleado  = Empleados::findOrFail($usuario);
+        $datosVenta  = OrdenesTrabajo::findOrFail($venta);
+
+        
+        $datosVenta -> id =  $request->id;
+        $datosVenta -> piel =  $request->piel;
+        $datosVenta -> horma =  $request->horma;
+        $datosVenta -> suela =  $request->suela;
+        $datosVenta -> tubo =  $request->tubo;
+        $datosVenta -> abono =  $request->abono;
+        $datosVenta -> precio =  $request->precio;
+        $datosVenta -> anticipo =  $request->anticipo;
+        $datosVenta -> tipo_venta =  $request->tipo_venta;
+        $datosVenta -> nombre =  $request->nombre;
+        $datosVenta -> apellidos =  $request->apellidos;
+        $datosVenta -> correo =  $request->correo;
+        $datosVenta -> numero_telefonico =  $request->numero_telefonico;
+        $datosVenta -> tipo =  $request->tipo;
+        $datosVenta -> fecha =  $request->fecha;
+
+        $datosVenta->save();
+
+        return redirect()->route('ventas.ventas');
+
         // $validated = $request->validate([
         // 'id' => ['required'],
         // 'piel' => ['required'],

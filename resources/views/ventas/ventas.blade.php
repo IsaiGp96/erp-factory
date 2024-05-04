@@ -19,10 +19,13 @@
     <x-tablaVentas-component :ordenesTrabajo="$ordenesTrabajo">
     </x-tablaVentas-component>
 
-    
+
+
+
 
 </x-dashboard-layout>
 <script>
+
     document.addEventListener('DOMContentLoaded', function() {
         // Botón para abrir el modal
         const openModalBtn = document.getElementById('openModalBtn');
@@ -57,5 +60,11 @@
 
         // Adjuntar evento de teclado al documento
         document.addEventListener("keydown", handleKeyPress);
+
+
+         
     });
+
+   
 </script>
+

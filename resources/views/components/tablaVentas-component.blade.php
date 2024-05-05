@@ -108,16 +108,16 @@
                                                     Editar
                                                 </button>
 
-                                                <button
+                                                <a onclick="confirmDelete('{{ $ordenTrabajo->id }}')"
                                                     class="text-blue-500 transition-colors duration-200 hover:text-indigo-500 focus:outline-none">
                                                     Eliminar
-                                                </button>
+                                                </a>
+
 
                                             </div>
 
                                         </td>
                                     </tr>
-                                    
                                 @endforeach
 
                             </tbody>
@@ -134,6 +134,25 @@
 
 
 <script>
+    //Confirmar eliminación
+    function confirmDelete(id) {
+        alertify.confirm("Eliminar Venta", "¿Estás seguro de que quieres eliminar esta venta?", function(e) {
+            if (e) {
+                let form = document.createElement('form');
+                form.method = 'POST';
+                form.action = `/ventas/${id}`;
+                form.innerHTML = `@csrf @method('DELETE')`;
+                document.body.appendChild(form);
+                form.submit();
+            } else {}
+        }, function() {}).set('labels', {
+            ok: 'Eliminar',
+            cancel: 'Cancelar'
+        }); // Personaliza los textos de los botones
+
+    }
+
+
     document.addEventListener('DOMContentLoaded', function() {
         // Botón para abrir el modal
         const openModalEditBtns = document.querySelectorAll('.openModalEdit');
@@ -166,6 +185,8 @@
                 closeModalEdit(); // Cerrar el modal cuando se presione la tecla "Escape"
             }
         }
+
+
 
         // Adjuntar evento de teclado al documento
         document.addEventListener("keydown", handleKeyPress);

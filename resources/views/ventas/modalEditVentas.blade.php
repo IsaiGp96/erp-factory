@@ -7,7 +7,7 @@
             <h5 class="modal-title text-xl" id="exampleModalLabel">Editar Orden</h5>
             <button type="button" id="closeModalEdit" class="btn-close" aria-label="Close"></button>
         </div>
-        <form method="POST" action="{{ route('ventas.editarVenta', $ordenTrabajo->id) }}">
+        <form method="POST" action="{{ route('ventas.editarVenta', ['venta' => $ordenTrabajo->id]) }}">
             @csrf
             @method('PUT')
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -16,7 +16,7 @@
                     <div class="space-y-2">
                         <label for="order-id" class="block">Order ID</label> {{-- Aqui podriamos setearlo ya el siguiente id con un contador de ordenes --}}
                         <input id="order-id" name="id" type="text" placeholder="Enter Order ID"
-                            value="{{ old('id', $ordenTrabajo->id) }}"
+                            value="{{ $ordenTrabajo->id }}"
                             class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
                     </div>
                     <div class="space-y-2">
@@ -135,4 +135,5 @@
 
 
 </div>
+
 </div>

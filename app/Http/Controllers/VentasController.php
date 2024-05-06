@@ -108,24 +108,7 @@ class  VentasController extends Controller
      */
     public function update(Request $request, $venta)
     {
-        $datosVenta  = OrdenesTrabajo::findOrFail($venta);
-
-
-        $datosVenta -> id =  $request->id;
-        $datosVenta -> piel =  $request->piel;
-        $datosVenta -> horma =  $request->horma;
-        $datosVenta -> suela =  $request->suela;
-        $datosVenta -> tubo =  $request->tubo;
-        $datosVenta -> abono =  $request->abono;
-        $datosVenta -> precio =  $request->precio;
-        $datosVenta -> anticipo =  $request->anticipo;
-        $datosVenta -> tipo_venta =  $request->tipo_venta;
-        $datosVenta -> nombre =  $request->nombre;
-        $datosVenta -> apellidos =  $request->apellidos;
-        $datosVenta -> correo =  $request->correo;
-        $datosVenta -> numero_telefonico =  $request->numero_telefonico;
-        $datosVenta -> tipo =  $request->tipo;
-        $datosVenta -> fecha =  $request->fecha;
+        $ordenTrabajo  = OrdenesTrabajo::findOrFail($venta);
 
          // Realiza la validación de los datos
     $validatedData = $request->validate([
@@ -146,7 +129,7 @@ class  VentasController extends Controller
         'fecha' => ['required'],
     ]);
 
-        $datosVenta->save($validatedData);
+        $ordenTrabajo->update($validatedData);
 
         return redirect()->route('ventas.ventas');
     }

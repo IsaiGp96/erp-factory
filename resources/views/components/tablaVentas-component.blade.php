@@ -103,6 +103,7 @@
                                             <div class="flex items-center gap-x-6">
                                                 @include('ventas.modalEditVentas')
                                                 <button data-target="#editarVenta{{ $ordenTrabajo->id }}"
+                                                    data-id="{{ $ordenTrabajo->id }}"
                                                     class="openModalEdit text-gray-500 transition-colors duration-200  hover:text-indigo-500 focus:outline-none">
 
                                                     Editar
@@ -162,8 +163,14 @@
         const modalEdit = document.querySelector('.modalEdit');
 
         // Función para abrir el modal
-        function openModalEdit() {
-            modalEdit.classList.remove('hidden');
+        function openModalEdit(event) {
+            // Obtener el ID del elemento seleccionado
+            const id = event.target.dataset.id;
+            // Pasar el ID al modal de edición
+            const modal = document.querySelector(event.target.dataset.target);
+            modal.dataset.id = id;
+            // Mostrar el modal de edición
+            modal.classList.remove('hidden');
         }
 
         // Función para cerrar el modal

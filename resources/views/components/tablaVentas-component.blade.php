@@ -101,7 +101,7 @@
                                         <td class="px-4 py-4 text-sm whitespace-nowrap">
 
                                             <div class="flex items-center gap-x-6">
-                                                @include('ventas.modalEditVentas')
+                                                
                                                 <button data-target="#editarVenta{{ $ordenTrabajo->id }}"
                                                     class="openModalEdit text-gray-500 transition-colors duration-200  hover:text-indigo-500 focus:outline-none">
 
@@ -112,14 +112,14 @@
                                                     class="text-blue-500 transition-colors duration-200 hover:text-indigo-500 focus:outline-none">
                                                     Eliminar
                                                 </button>
-
+                                                @include('ventas.modalEditVentas')
                                             </div>
 
                                         </td>
                                     </tr>
                                     
                                 @endforeach
-
+                                
                             </tbody>
                         </table>
                     </div>

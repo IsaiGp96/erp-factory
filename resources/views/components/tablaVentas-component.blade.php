@@ -101,29 +101,24 @@
                                         <td class="px-4 py-4 text-sm whitespace-nowrap">
 
                                             <div class="flex items-center gap-x-6">
-                                                
+                                               
                                                 <button data-target="#editarVenta{{ $ordenTrabajo->id }}"
                                                     data-id="{{ $ordenTrabajo->id }}"
                                                     class="openModalEdit text-gray-500 transition-colors duration-200  hover:text-indigo-500 focus:outline-none">
 
                                                     Editar
                                                 </button>
-
+                                                
                                                 <a onclick="confirmDelete('{{ $ordenTrabajo->id }}')"
                                                     class="text-blue-500 transition-colors duration-200 hover:text-indigo-500 focus:outline-none">
                                                     Eliminar
-<<<<<<< HEAD
                                                 </button>
-                                                @include('ventas.modalEditVentas')
-=======
-                                                </a>
-
-
->>>>>>> 59f24810ff237c05c0f8176ef9cb804244b9ff86
+                                                
                                             </div>
 
                                         </td>
                                     </tr>
+                                    @include('ventas.modalEditVentas')
                                 @endforeach
                                 
                             </tbody>

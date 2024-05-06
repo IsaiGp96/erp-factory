@@ -82,7 +82,7 @@
                             venta</label>
                         <select name="tipo_venta" id="tipo_venta" value="{{ $ordenTrabajo->tipo_venta }}"
                             class="w-full mt-1 text-gray-600 focus:outline-none focus:border-indigo-700 border-gray-300 rounded border">
-                            <option value="" selected disabled>Selecciona una opción</option>
+                            <option value="{{ $ordenTrabajo->tipo_venta }}" selected>{{ $ordenTrabajo->tipo_venta }}</option>
                             <option value="Stock">Stock</option>
                             <option value="Mayoreo">Mayoreo</option>
                             <option value="Quinela">Quinela</option>

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\OrdenesTrabajo;
+use App\Models\Venta;
 
 class  VentasController extends Controller
 {
@@ -93,12 +94,12 @@ class  VentasController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($ventas)
+    public function edit($id)
     {
 
-        $ventas = OrdenesTrabajo::findOrFail($ventas);
+        $ordenTrabajo = OrdenesTrabajo::findOrFail($id);
         return view('ventas.editarVenta', [
-            'venta' => $ventas
+            'venta' => $ordenTrabajo
         ]);
     }
 
@@ -107,24 +108,7 @@ class  VentasController extends Controller
      */
     public function update(Request $request, $venta)
     {
-        $datosVenta  = OrdenesTrabajo::findOrFail($venta);
-
-        
-        $datosVenta -> id =  $request->id;
-        $datosVenta -> piel =  $request->piel;
-        $datosVenta -> horma =  $request->horma;
-        $datosVenta -> suela =  $request->suela;
-        $datosVenta -> tubo =  $request->tubo;
-        $datosVenta -> abono =  $request->abono;
-        $datosVenta -> precio =  $request->precio;
-        $datosVenta -> anticipo =  $request->anticipo;
-        $datosVenta -> tipo_venta =  $request->tipo_venta;
-        $datosVenta -> nombre =  $request->nombre;
-        $datosVenta -> apellidos =  $request->apellidos;
-        $datosVenta -> correo =  $request->correo;
-        $datosVenta -> numero_telefonico =  $request->numero_telefonico;
-        $datosVenta -> tipo =  $request->tipo;
-        $datosVenta -> fecha =  $request->fecha;
+        $ordenTrabajo  = OrdenesTrabajo::findOrFail($venta);
 
          // Realiza la validación de los datos
     $validatedData = $request->validate([
@@ -145,38 +129,18 @@ class  VentasController extends Controller
         'fecha' => ['required'],
     ]);
 
-        $datosVenta->save($validatedData);
+        $ordenTrabajo->update($validatedData);
 
         return redirect()->route('ventas.ventas');
-
-        // $validated = $request->validate([
-        // 'id' => ['required'],
-        // 'piel' => ['required'],
-        // 'horma' => ['required'],
-        // 'suela' => ['required'],
-        // 'tubo' => ['required'],
-        // 'abono' => ['required'],
-        // 'precio' => ['required'],
-        // 'anticipo' => ['required'],
-        // 'tipo_venta' => ['required'],
-        // 'nombre' => ['required'],
-        // 'apellidos' => ['required'],
-        // 'correo' => ['required'],
-        // 'numero_telefonico' => ['required'],
-        // 'tipo' => ['required'],
-        // 'fecha' => ['required'],
-        // ]);
-
-        // $empleado ->update($validated);
-
-        // return redirect()->route('ventas.ventas');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Venta $ventas)
+    public function destroy(string $id)
     {
-        //
+        $venta = OrdenesTrabajo::findOrFail($id);
+        $venta->delete();
+        return redirect()->route('ventas.ventas');
     }
 }

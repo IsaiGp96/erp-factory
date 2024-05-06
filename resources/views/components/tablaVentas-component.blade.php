@@ -103,21 +103,27 @@
                                             <div class="flex items-center gap-x-6">
                                                 
                                                 <button data-target="#editarVenta{{ $ordenTrabajo->id }}"
+                                                    data-id="{{ $ordenTrabajo->id }}"
                                                     class="openModalEdit text-gray-500 transition-colors duration-200  hover:text-indigo-500 focus:outline-none">
 
                                                     Editar
                                                 </button>
 
-                                                <button
+                                                <a onclick="confirmDelete('{{ $ordenTrabajo->id }}')"
                                                     class="text-blue-500 transition-colors duration-200 hover:text-indigo-500 focus:outline-none">
                                                     Eliminar
+<<<<<<< HEAD
                                                 </button>
                                                 @include('ventas.modalEditVentas')
+=======
+                                                </a>
+
+
+>>>>>>> 59f24810ff237c05c0f8176ef9cb804244b9ff86
                                             </div>
 
                                         </td>
                                     </tr>
-                                    
                                 @endforeach
                                 
                             </tbody>
@@ -134,6 +140,25 @@
 
 
 <script>
+    //Confirmar eliminación
+    function confirmDelete(id) {
+        alertify.confirm("Eliminar Venta", "¿Estás seguro de que quieres eliminar esta venta?", function(e) {
+            if (e) {
+                let form = document.createElement('form');
+                form.method = 'POST';
+                form.action = `/ventas/${id}`;
+                form.innerHTML = `@csrf @method('DELETE')`;
+                document.body.appendChild(form);
+                form.submit();
+            } else {}
+        }, function() {}).set('labels', {
+            ok: 'Eliminar',
+            cancel: 'Cancelar'
+        }); // Personaliza los textos de los botones
+
+    }
+
+
     document.addEventListener('DOMContentLoaded', function() {
         // Botón para abrir el modal
         const openModalEditBtns = document.querySelectorAll('.openModalEdit');
@@ -143,8 +168,14 @@
         const modalEdit = document.querySelector('.modalEdit');
 
         // Función para abrir el modal
-        function openModalEdit() {
-            modalEdit.classList.remove('hidden');
+        function openModalEdit(event) {
+            // Obtener el ID del elemento seleccionado
+            const id = event.target.dataset.id;
+            // Pasar el ID al modal de edición
+            const modal = document.querySelector(event.target.dataset.target);
+            modal.dataset.id = id;
+            // Mostrar el modal de edición
+            modal.classList.remove('hidden');
         }
 
         // Función para cerrar el modal
@@ -166,6 +197,8 @@
                 closeModalEdit(); // Cerrar el modal cuando se presione la tecla "Escape"
             }
         }
+
+
 
         // Adjuntar evento de teclado al documento
         document.addEventListener("keydown", handleKeyPress);

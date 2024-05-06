@@ -45,7 +45,8 @@ Route::post('/ventas', [VentasController::class, 'store']) ->name('ventas.store'
 //Ruta cargar la vista de edicion con el metodo edit para obtener el id del usuario y pasarlo como parametro
 Route::put('/ventas/modalEditVentas/{venta}', [VentasController::class,'update'])->name('ventas.editarVenta');
 
-
+//Ruta delete para eliminar ventas
+Route::delete('ventas/{venta}', [VentasController::class, 'destroy'])->name('ventas.index');
 
 //------------------- END VENTAS ------------------------------------------------------------------------------------------------------------
 

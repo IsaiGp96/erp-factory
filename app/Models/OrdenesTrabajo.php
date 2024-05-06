@@ -10,7 +10,7 @@ class OrdenesTrabajo extends Model
     use HasFactory;
 
     protected $table = 'ordenes_trabajo';
-    
+
     protected $fillable = [
         'id',
         'piel',

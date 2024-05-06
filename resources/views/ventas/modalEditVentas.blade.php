@@ -1,14 +1,13 @@
 <!-- Vista emergente (modal) -->
-<!-- Vista emergente (modal) -->
-<div  id="editarVenta{{ $ordenTrabajo->id }}" class="modalEdit fixed inset-0 bg-black bg-opacity-50 flex hidden items-center justify-center">
+<div id="editarVenta{{ $ordenTrabajo->id }}"
+    class="modalEdit fixed inset-0 bg-black bg-opacity-50 flex hidden items-center justify-center">
     {{-- No borren el hidden --}}
     <div class="modal-content bg-white p-8 rounded-md">
         <div class="modal-header">
             <h5 class="modal-title text-xl" id="exampleModalLabel">Editar Orden</h5>
             <button type="button" id="closeModalEdit" class="btn-close" aria-label="Close"></button>
         </div>
-        <form  method="POST"
-            action="{{ route('ventas.editarVenta', $ordenTrabajo->id) }}">
+        <form method="POST" action="{{ route('ventas.editarVenta', ['venta' => $ordenTrabajo->id]) }}">
             @csrf
             @method('PUT')
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -120,7 +119,7 @@
                 <div class="mr-4">
                     <button type="submit" id="createModalBtn"
                         class="inline-flex items-center justify-center px-6 py-2 text-sm font-medium text-white bg-blue-500 border border-transparent rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
-                        Crear
+                        Guardar
                     </button>
                     <!-- Otros botones de acción si es necesario -->
                 </div>
@@ -136,4 +135,5 @@
 
 
 </div>
+
 </div>

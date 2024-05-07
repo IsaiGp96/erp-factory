@@ -101,26 +101,26 @@
                                         <td class="px-4 py-4 text-sm whitespace-nowrap">
 
                                             <div class="flex items-center gap-x-6">
-                                               
+
                                                 <button data-target="#editarVenta{{ $ordenTrabajo->id }}"
                                                     data-id="{{ $ordenTrabajo->id }}"
                                                     class="openModalEdit text-gray-500 transition-colors duration-200  hover:text-indigo-500 focus:outline-none">
 
                                                     Editar
                                                 </button>
-                                                
+
                                                 <a onclick="confirmDelete('{{ $ordenTrabajo->id }}')"
                                                     class="text-blue-500 transition-colors duration-200 hover:text-indigo-500 focus:outline-none">
                                                     Eliminar
-                                                </button>
-                                                
+                                                    </button>
+
                                             </div>
 
                                         </td>
                                     </tr>
                                     @include('ventas.modalEditVentas')
                                 @endforeach
-                                
+
                             </tbody>
                         </table>
                     </div>
@@ -152,6 +152,21 @@
         }); // Personaliza los textos de los botones
 
     }
+    // Selecciona todos los elementos con la clase closeModalEditCancel y agrega un event listener
+    document.querySelectorAll('.closeModalEditCancel').forEach(button => {
+        button.addEventListener('click', function() {
+            const target = this.dataset.target; // Obtiene el valor del atributo data-target
+            closeModal(
+            target); // Llama a la función closeModal con el valor de data-target como argumento
+        });
+    });
+
+    // Función para cerrar el modal
+    function closeModal(target) {
+        const modal = document.querySelector(target);
+        modal.classList.add('hidden'); // Oculta el modal
+    }
+
 
 
     document.addEventListener('DOMContentLoaded', function() {

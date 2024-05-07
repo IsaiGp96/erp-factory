@@ -82,7 +82,8 @@
                             venta</label>
                         <select name="tipo_venta" id="tipo_venta" value="{{ $ordenTrabajo->tipo_venta }}"
                             class="w-full mt-1 text-gray-600 focus:outline-none focus:border-indigo-700 border-gray-300 rounded border">
-                            <option value="{{ $ordenTrabajo->tipo_venta }}" selected>{{ $ordenTrabajo->tipo_venta }}</option>
+                            <option value="{{ $ordenTrabajo->tipo_venta }}" selected>{{ $ordenTrabajo->tipo_venta }}
+                            </option>
                             <option value="Stock">Stock</option>
                             <option value="Mayoreo">Mayoreo</option>
                             <option value="Quinela">Quinela</option>
@@ -124,10 +125,11 @@
                     <!-- Otros botones de acción si es necesario -->
                 </div>
                 <div>
-                    <button type="button" id="closeModalEdit"
-                        class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-red-500 border border-transparent rounded-md shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                    <button type="button" data-target="#editarVenta{{ $ordenTrabajo->id }}"
+                        class="closeModalEditCancel inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-red-500 border border-transparent rounded-md shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
                         Cancelar
                     </button>
+
                     <!-- Otros botones de acción si es necesario -->
                 </div>
         </form>
